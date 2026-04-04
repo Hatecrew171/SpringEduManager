@@ -64,3 +64,9 @@ La API permite la integración con sistemas externos y soporta operaciones de le
 1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/Hatecrew171/SpringEduManager/
+
+2. **Importar en IDE: Importar como proyecto Maven en Eclipse o IntelliJ.**
+
+3.- **Ejecutar: Correr la clase SpringEduManagerApplication.java.**
+
+4.- **Acceder: Abrir http://localhost:8080 en el navegador.**
