@@ -1,2 +1,66 @@
-# SpringEduManager
-Sistema de gestión escolar basico con Spring Boot: Seguridad por roles, CRUD completo de cursos/alumnos, API REST e interfaz web responsiva.
+# 🎓 EduManager - Sistema de Gestión Académica
+
+**EduManager** es una plataforma integral desarrollada con **Java y Spring Boot** diseñada para digitalizar la administración de instituciones educativas. Permite gestionar cursos, inscripciones de estudiantes y un sistema de calificaciones dinámico, todo bajo una interfaz web moderna y una API robusta.
+
+---
+
+## 🚀 Funcionalidades Principales
+
+### 🛠️ Módulo Administrativo (Admin)
+- **Control Total (CRUD):** Crear, editar y eliminar Cursos y Estudiantes.
+- **Gestión de Inscripciones:** Aprobar o rechazar solicitudes de alumnos con comentarios/motivos personalizados.
+- **Sistema de Calificaciones:** Registrar evaluaciones detalladas (Nombre del test y puntaje).
+- **Monitorización:** Vista global de usuarios registrados y boletín histórico de notas.
+
+### 👤 Módulo del Estudiante (User)
+- **Catálogo de Cursos:** Visualización de oferta académica disponible.
+- **Inscripciones en Tiempo Real:** Solicitar ingreso a cursos y seguir el estado de la solicitud (Pendiente/Aprobado/Rechazado).
+- **Boletín Personal:** Acceso inmediato a las calificaciones obtenidas.
+
+---
+
+## 🔐 Seguridad y Roles
+
+El sistema implementa **Spring Security** con una arquitectura híbrida (Base de Datos + Memoria):
+
+| Usuario | Username | Password | Rol | Permisos |
+| :--- | :--- | :--- | :--- | :--- |
+| **Administrador** | `admin` | `admin123` | `ROLE_ADMIN` | Acceso total al panel y gestión. |
+| **Estudiante** | `[email]` | `user123` | `ROLE_USER` | Inscripciones y ver notas. |
+
+---
+
+## 📡 API REST - Documentación de Endpoints (v1)
+
+La API permite la integración con sistemas externos y soporta operaciones de lectura y escritura.
+
+### 📖 Consultas (GET)
+- `GET /api/v1/cursos`: Lista cursos con sus alumnos aprobados.
+- `GET /api/v1/estudiantes`: Lista estudiantes con su historial de notas.
+- `GET /api/v1/admin/pendientes`: Lista solicitudes de inscripción por procesar.
+
+### ✍️ Acciones (POST)
+- `POST /api/v1/estudiantes`: Registra un nuevo alumno. 
+  - *Body (JSON):* `{"nombre": "Juan", "email": "juan@mail.com"}`
+- `POST /api/v1/inscripciones/gestionar`: Aprueba/Rechaza solicitudes.
+  - *Params:* `id`, `estado` (APROBADO/RECHAZADO), `motivo`.
+- `POST /api/v1/notas`: Registra una nueva calificación.
+  - *Params:* `estudianteId`, `cursoId`, `nombreTest`, `nota`.
+
+---
+
+## 🛠️ Stack Tecnológico
+- **Lenguaje:** JavaSE-21
+- **Framework:** Spring Boot 3.x
+- **Seguridad:** Spring Security (Auth basada en Formulario y API)
+- **Persistencia:** Spring Data JPA + H2 Database (In-Memory)
+- **Frontend:** Thymeleaf + Bootstrap 5 (Responsive Design)
+- **Arquitectura:** MVC + DTOs para la API
+
+---
+
+## ⚙️ Instalación y Ejecución
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/Hatecrew171/SpringEduManager/
