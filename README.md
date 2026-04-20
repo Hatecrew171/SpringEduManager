@@ -1,6 +1,8 @@
 # 🎓 EduManager - Sistema de Gestión Académica
 
-**EduManager** es una plataforma integral desarrollada con **Java y Spring Boot** diseñada para digitalizar la administración de instituciones educativas. Permite gestionar cursos, inscripciones de estudiantes y un sistema de calificaciones dinámico, todo bajo una interfaz web moderna y una API robusta.
+API y plataforma web desarrollada con **Java y Spring Boot** para la gestión de instituciones educativas, permitiendo administrar cursos, estudiantes, inscripciones y calificaciones.
+
+Este proyecto demuestra el desarrollo de aplicaciones backend utilizando **arquitectura por capas, APIs REST, Spring Security y JPA**, aplicando buenas prácticas utilizadas en entornos empresariales.
 
 ---
 
